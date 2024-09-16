@@ -76,6 +76,8 @@ std::optional<fs::path> find_override(const std::wstring filename)
 std::optional<std::wstring> normalize_filename(const std::wstring path) {
     if (path.starts_with(L"sd:/")) {
         return std::wstring(path.substr(4));
+    } else if (path.starts_with(L"sd_dlc02:/")) {
+        return std::wstring(path.substr(10));
     }
 
     return {};
